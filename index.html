@@ -10,15 +10,39 @@
 <body>
     <header class="header">
         <img src="https://upload.wikimedia.org/wikipedia/pt/7/77/Pok%C3%A9dex_3D_logo.png" alt="Logo Pokedex" class="logo">
+        <nav>
+            <ul class="nav-list">
+                <li><a href="#" data-type="fire">Fogo</a></li>
+                <li><a href="#" data-type="water">Água</a></li>
+                <li><a href="#" data-type="grass">Grama</a></li>
+                <li><a href="#" data-type="electric">Elétrico</a></li>
+                <li><a href="#" data-type="ice">Gelo</a></li>
+                <li><a href="#" data-type="fighting">Lutador</a></li>
+                <li><a href="#" data-type="poison">Venenoso</a></li>
+                <li><a href="#" data-type="ground">Terra</a></li>
+                <li><a href="#" data-type="flying">Voador</a></li>
+                <li><a href="#" data-type="psychic">Psíquico</a></li>
+                <li><a href="#" data-type="bug">Inseto</a></li>
+                <li><a href="#" data-type="rock">Pedra</a></li>
+                <li><a href="#" data-type="ghost">Fantasma</a></li>
+                <li><a href="#" data-type="dragon">Dragão</a></li>
+                <li><a href="#" data-type="dark">Sombrio</a></li>
+                <li><a href="#" data-type="steel">Aço</a></li>
+                <li><a href="#" data-type="fairy">Fada</a></li>
+            </ul>
+        </nav>
     </header>
     <div class="container">
-        <h2>Quem é esser Pokémon</h2>
+        <h2>Catálogo de Pokémon</h2>
         <div class="search-container">
             <input type="text" id="search-input" placeholder="Digite o nome do Pokémon..." />
             <button id="search-button">Pesquisar</button>
         </div>
         <div id="pokemon-info">
-            <p>Digite o nome de um Pokémon para começar a busca.</p>
+            <p></p>
+        </div>
+        <div id="pokemon-list">
+            <!-- Aqui será carregada a lista de Pokémon por tipo -->
         </div>
     </div>
     <script src="script.js"></script>

@@ -3,7 +3,6 @@
 
 :root {
     --primary-color: #ff0000;
-    --secondary-color: #ff0000;
     --background-color: #f4f4f4;
     --text-color: #333;
     --container-bg-color: #fff;
@@ -33,12 +32,42 @@ body {
     z-index: 1000;
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .header .logo {
-    height: 80px; /* Ajuste o tamanho conforme necessário */
-    margin-left: 20px; /* Espaçamento à esquerda */
-    object-fit: contain; /* Mantém a proporção da imagem */
+    height: 80px;
+    margin-left: 20px;
+    object-fit: contain;
+}
+
+.nav-list {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 10px; /* Espaçamento entre os itens */
+    justify-content: center; /* Centraliza os itens horizontalmente */
+}
+
+.nav-list li {
+    flex: 0 1 12%; /* Ajusta a largura dos itens e permite que quebrem para a próxima linha */
+    max-width: 120px; /* Limita a largura máxima dos itens */
+}
+
+.nav-list li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    transition: background-color 0.3s;
+    display: block; /* Faz com que o link ocupe toda a área do item */
+}
+
+.nav-list li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
 }
 
 .container {
@@ -84,16 +113,12 @@ h2 {
 }
 
 #search-button:hover {
-    background-color: var(--secondary-color);
+    background-color: darkred;
 }
 
 #pokemon-info {
     margin-top: 20px;
     font-size: 1rem;
-}
-
-#pokemon-info h2 {
-    margin-bottom: 10px;
 }
 
 img {
@@ -106,7 +131,7 @@ img {
 /* Estilos responsivos */
 @media (max-width: 600px) {
     .header .logo {
-        height: 60px; /* Ajuste conforme necessário */
+        height: 60px;
     }
 
     h2 {
@@ -120,5 +145,14 @@ img {
 
     img {
         max-width: 150px;
+    }
+
+    .nav-list {
+        flex-direction: column; /* Muda a direção para coluna em telas pequenas */
+        align-items: center; /* Centraliza os itens verticalmente */
+    }
+
+    .nav-list li {
+        flex: 1 0 80%; /* Ajusta a largura dos itens em telas pequenas */
     }
 }

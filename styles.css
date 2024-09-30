@@ -33,6 +33,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .header .logo {
@@ -41,19 +42,23 @@ body {
     object-fit: contain;
 }
 
+nav {
+    flex: 1;
+}
+
 .nav-list {
     display: flex;
-    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+    flex-wrap: wrap;
     list-style: none;
     margin: 0;
     padding: 0;
-    gap: 10px; /* Espaçamento entre os itens */
-    justify-content: center; /* Centraliza os itens horizontalmente */
+    gap: 10px;
+    justify-content: center;
 }
 
 .nav-list li {
-    flex: 0 1 12%; /* Ajusta a largura dos itens e permite que quebrem para a próxima linha */
-    max-width: 120px; /* Limita a largura máxima dos itens */
+    flex: 1 1 auto;
+    max-width: 100px; /* Ajuste o máximo necessário */
 }
 
 .nav-list li a {
@@ -61,8 +66,9 @@ body {
     text-decoration: none;
     font-weight: bold;
     padding: 8px 12px;
+    display: block;
+    text-align: center;
     transition: background-color 0.3s;
-    display: block; /* Faz com que o link ocupe toda a área do item */
 }
 
 .nav-list li a:hover {
@@ -129,9 +135,38 @@ img {
 }
 
 /* Estilos responsivos */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
     .header .logo {
         height: 60px;
+        margin-bottom: 10px;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .nav-list li {
+        flex: 1 1 auto;
+        max-width: none; /* Remove o limite máximo de largura */
+    }
+
+    .nav-list li a {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        margin: 120px auto 20px;
+        padding: 20px;
     }
 
     h2 {
@@ -148,11 +183,6 @@ img {
     }
 
     .nav-list {
-        flex-direction: column; /* Muda a direção para coluna em telas pequenas */
-        align-items: center; /* Centraliza os itens verticalmente */
-    }
-
-    .nav-list li {
-        flex: 1 0 80%; /* Ajusta a largura dos itens em telas pequenas */
+        gap: 5px;
     }
 }
